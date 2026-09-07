@@ -1,0 +1,1544 @@
+/* Main stylesheet: layout, forms, tables, buttons, and responsive rules. */
+/* =============================================================== */
+/* Global reset and base layout */
+/* =============================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f3f5f9;
+  color: #1f2937;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Global theme: these rules affect every private page, not only Settings. */
+body.dark-mode {
+  background: #111827;
+  color: #f9fafb;
+}
+
+body.dark-mode .HomePage,
+body.dark-mode .ProductPage,
+body.dark-mode .CategoryPage,
+body.dark-mode .SettingPage {
+  background: #111827;
+  color: #f9fafb;
+}
+
+body.dark-mode .HomeContent,
+body.dark-mode .ProductContent,
+body.dark-mode .CategoryContent,
+body.dark-mode .SettingContent,
+body.dark-mode .Panel,
+body.dark-mode .ProductTableCard,
+body.dark-mode .CategoryCard,
+body.dark-mode .SettingCard,
+body.dark-mode .SettingFormCard,
+body.dark-mode .MiniStat {
+  background: #1f2937;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode td,
+body.dark-mode th,
+body.dark-mode label,
+body.dark-mode .MiniLabel,
+body.dark-mode .StatLabel {
+  color: #f9fafb;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background: #111827 !important;
+  border-color: #4b5563 !important;
+  color: #f9fafb !important;
+}
+
+body.dark-mode .ProductTable th,
+body.dark-mode .CategoryTable th,
+body.dark-mode .ProductsTable th {
+  background: #374151;
+  color: #f9fafb;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =============================================================== */
+/* Login page styles */
+/* This section styles the welcome screen and authentication form */
+/* =============================================================== */
+.ContenarAll {
+  width: 100%;
+  height: 100vh;
+  background:#d1d1d1  ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Contant{
+  width: 95%;
+  height: 95%;
+  background: #0000ff1e;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.SecIntro{
+  width: 45%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.HeaderIntro{
+  width: 90%;
+  height: 100px;
+}
+.TitelHeader{
+  margin-left: 30px;
+  font-size: 44px;
+}
+.titelP{
+  margin: 10px 0px 0px 20px;
+  font-size: 22px;
+  font-weight: 800;
+}
+.ContantIntro{
+  width: 90%;
+  height: 80%;
+}
+.introImage{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.Seclogin{
+  width: 40%;
+  height: 90%;
+  background-image: linear-gradient(to right, #0000ff4b, #0000ff1e);
+  
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headerLogin{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+.informationLogin{
+  width: 90%;
+  height: 60%;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.Email , .password , .Name{
+  width: 70%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.inputemail,.inputpassword,.inputname{
+  margin: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  max-width: 300px;
+  padding: 15px 25px;
+  font-size: 22px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+}
+.PrForgotpassword{
+  width: 90%;
+  height: 20px;
+}
+/* From Uiverse.io by satyamchaudharydev */ 
+.btnlogin {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+.btnlogin .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnlogin .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+.btnlogin .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+.btnlogin:hover {
+  background-color: var(--hover-color);
+}
+.btnlogin:hover .arrow {
+  background: var(--secondary-color);
+}
+.btnlogin:hover .arrow:before {
+  right: 0;
+}
+.spanswath{
+  font-size: 20px;
+  color: blue;
+  font-style: italic;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* =============================================================== */
+/* Login page end */
+/* =============================================================== */
+
+/* =============================================================== */
+/* Sidebar navigation styles */
+/* This styles the left menu used on dashboard pages */
+/* =============================================================== */
+.MainSaid{
+  width: 200px;
+  height: 100vh;
+  background: #96959525;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.HeaderMain{
+  width: 95%;
+  height:7% ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.head{
+  font-size: 24px;
+  font-weight: bolder;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+}
+.NameUser{
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.SecMain{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.BtnSecMain{
+  width: 80%;
+  height: 50px;
+  border: 0;
+  border-radius: 20px;
+  color: #fff;
+  background: #8b78f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+}
+.BtnSecMain:hover{
+  background: #4c2cff;
+}
+.BtnSecMain.active{
+  background: #4c2cff;
+}
+
+.HomePage {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f3f5f9;
+  color: #1f2937;
+}
+
+.HomeContent {
+  flex: 1;
+  padding: 28px 26px 26px;
+}
+
+.HomeTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 22px;
+  color: #111827;
+}
+
+.StatsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(170px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.StatCard {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.StatLabel {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.StatValue {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.StatChange {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.StatChange.positive {
+  color: #16a34a;
+}
+
+.DashboardGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(250px, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.Panel {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.PanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.PanelHeader h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.FilterBtn,
+.ViewAllLink {
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  color: #374151;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ChartWrap {
+  width: 100%;
+}
+
+.ChartWrap svg {
+  width: 100%;
+  height: 220px;
+  display: block;
+}
+
+.GridLines line {
+  stroke: #e5e7eb;
+  stroke-width: 1;
+}
+
+.ChartWrap polyline {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.ChartWrap circle {
+  fill: #fff;
+  stroke: #3b82f6;
+  stroke-width: 2;
+}
+
+.ChartLabels {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  margin-top: -6px;
+  color: #6b7280;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.LowStockList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.LowStockItem {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.StockIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: inline-block;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+}
+
+.StockIcon.orange {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.StockIcon.blue {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+.StockIcon.dark {
+  background: linear-gradient(135deg, #374151, #4b5563);
+}
+
+.StockInfo {
+  font-size: 0.94rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+.StockCount {
+  font-size: 0.79rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.ProductsPanel {
+  padding-bottom: 8px;
+}
+
+.ProductsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ProductsTable th,
+.ProductsTable td {
+  text-align: left;
+  padding: 14px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.ProductsTable th {
+  color: #111827;
+  font-weight: 700;
+}
+
+.ProductNameCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ProductThumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  display: inline-block;
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.15);
+}
+
+/* =============================================================== */
+/* Home dashboard styles */
+/* These rules define the main dashboard cards, chart, and table */
+/* =============================================================== */
+
+@media (max-width: 980px) {
+  .StatsGrid {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+
+  .DashboardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .HomePage {
+    flex-direction: column;
+  }
+
+  .MainSaid {
+    width: 100%;
+    height: auto;
+    padding: 18px 0;
+  }
+
+  .SecMain {
+    gap: 16px;
+    padding: 12px 0;
+  }
+
+  .HomeContent {
+    padding: 20px 16px 26px;
+  }
+
+  .StatsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ProductsTable thead {
+    display: none;
+  }
+
+  .ProductsTable,
+  .ProductsTable tbody,
+  .ProductsTable tr,
+  .ProductsTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .ProductsTable tr {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px 0;
+  }
+
+  .ProductsTable td {
+    border: none;
+    padding: 8px 0;
+  }
+}
+
+/* =============================================================== */
+/* Category page styles */
+/* This section styles the category list and summary cards */
+/* =============================================================== */
+.CategoryPage {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f3f5f9;
+  color: #1f2937;
+}
+
+.CategoryContent {
+  flex: 1;
+  padding: 28px 26px 30px;
+}
+
+.CategoryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.CategoryHeader h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.CategoryFilterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+
+.CategoryStatsRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.CategoryCard {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 18px 18px 8px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  height: 70%;
+  overflow: auto;
+}
+
+.CategoryTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.CategoryTable th,
+.CategoryTable td {
+  text-align: left;
+  padding: 14px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.CategoryTable th {
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+}
+
+.CategoryCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.CategoryIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.CategoryIcon.blue {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+}
+
+.CategoryIcon.purple {
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+}
+
+.CategoryIcon.orange {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+.CategoryIcon.green {
+  background: linear-gradient(135deg, #34d399, #10b981);
+}
+
+.CategoryIcon.dark {
+  background: linear-gradient(135deg, #374151, #4b5563);
+}
+
+.GrowthValue {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .CategoryFilterBar,
+  .CategoryHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .FilterGroup {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .CategoryStatsRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .CategoryPage {
+    flex-direction: column;
+  }
+
+  .CategoryContent {
+    padding: 20px 16px 26px;
+  }
+
+  .CategoryTable thead {
+    display: none;
+  }
+
+  .CategoryTable,
+  .CategoryTable tbody,
+  .CategoryTable tr,
+  .CategoryTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .CategoryTable tr {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px 0;
+  }
+
+  .CategoryTable td {
+    border: none;
+    padding: 8px 0;
+  }
+}
+
+/* =============================================================== */
+/* Settings page styles */
+/* This section styles account settings cards and forms */
+/* =============================================================== */
+.SettingPage {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f3f5f9;
+  color: #1f2937;
+}
+
+.SettingContent {
+  flex: 1;
+  padding: 28px 26px 30px;
+}
+
+.SettingMessage {
+  margin: -8px 0 18px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #ecfdf5;
+  color: #047857;
+  font-weight: 600;
+}
+
+.SettingHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.SettingHeader h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.SettingOverview {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.SettingCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 18px 16px;
+}
+
+.SettingIcon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+  font-size: 1.2rem;
+}
+
+.SettingCard h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.SettingCard p {
+  color: #6b7280;
+  font-size: 0.82rem;
+}
+
+.SettingFormCard {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 20px 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.FormHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.FormHeader h3,
+.SettingFormCard h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.FormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.FormField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.FormField label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.FormField input {
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: #111827;
+  outline: none;
+}
+
+.FormField input:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.SettingBottomGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.SettingFormCard.compact {
+  min-height: 170px;
+}
+
+.ToggleRow,
+.SecurityRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.Toggle {
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.Toggle.on {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.Toggle.off {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+body.dark-mode .SettingPage {
+  background: #111827;
+  color: #f9fafb;
+}
+
+body.dark-mode .SettingHeader h1,
+body.dark-mode .SettingCard h3,
+body.dark-mode .FormHeader h3,
+body.dark-mode .SettingFormCard h3,
+body.dark-mode .FormField label {
+  color: #f9fafb;
+}
+
+body.dark-mode .SettingCard,
+body.dark-mode .SettingFormCard {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark-mode .FormField input {
+  background: #111827;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+/* Dark theme polish: separate surfaces, readable muted text, and one clear accent. */
+body.dark-mode .MainSaid {
+  background: #0b1220;
+  border-right: 1px solid #253653;
+}
+
+body.dark-mode .NameUser,
+body.dark-mode .PageEyebrow,
+body.dark-mode .MiniLabel,
+body.dark-mode .StatLabel {
+  color: #9fb0c8;
+}
+
+body.dark-mode .head {
+  color: #e5eefc;
+}
+
+body.dark-mode .BtnSecMain {
+  background: #20304a;
+  color: #dbeafe;
+}
+
+body.dark-mode .BtnSecMain:hover,
+body.dark-mode .BtnSecMain.active {
+  background: #0891b2;
+  color: #ecfeff;
+}
+
+body.dark-mode .StatCard,
+body.dark-mode .ProductFilterBar,
+body.dark-mode .CategoryFilterBar,
+body.dark-mode .SearchBox {
+  background: #162033;
+  border-color: #2d405e;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .StatValue,
+body.dark-mode .MiniStat strong,
+body.dark-mode .TableHeader h3,
+body.dark-mode .ProductHeader h1,
+body.dark-mode .CategoryHeader h1 {
+  color: #f8fafc;
+}
+
+body.dark-mode .ProductTable th,
+body.dark-mode .ProductTable td,
+body.dark-mode .CategoryTable th,
+body.dark-mode .CategoryTable td,
+body.dark-mode .ProductsTable th,
+body.dark-mode .ProductsTable td {
+  border-color: #2d405e;
+  color: #dbeafe;
+}
+
+body.dark-mode .ProductTable th,
+body.dark-mode .CategoryTable th,
+body.dark-mode .ProductsTable th {
+  background: #20304a;
+  color: #f8fafc;
+}
+
+body.dark-mode .SecondaryButton,
+body.dark-mode .FilterButton {
+  background: #263957;
+  color: #dbeafe;
+}
+
+body.dark-mode .SecondaryButton:hover,
+body.dark-mode .FilterButton:hover {
+  background: #334d73;
+}
+
+body.dark-mode .ViewAllLink {
+  color: #67e8f9;
+}
+
+body.dark-mode .SettingMessage {
+  background: #123b3b;
+  color: #99f6e4;
+}
+
+body.dark-mode .FormField input:disabled {
+  background: #1a2940 !important;
+  color: #9fb0c8 !important;
+}
+
+@media (max-width: 980px) {
+  .SettingOverview,
+  .FormGrid,
+  .SettingBottomGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .SettingPage {
+    flex-direction: column;
+  }
+
+  .SettingContent {
+    padding: 20px 16px 26px;
+  }
+
+  .SettingHeader,
+  .FormHeader,
+  .SettingOverview,
+  .FormGrid,
+  .SettingBottomGrid {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .SettingOverview,
+  .FormGrid,
+  .SettingBottomGrid {
+    display: grid;
+  }
+}
+
+/* =============================================================== */
+/* Product page styles */
+/* This section styles the product table, filters, and summary cards */
+/* =============================================================== */
+.ProductPage {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #f3f5f9;
+  color: #1f2937;
+}
+
+.ProductContent {
+  position: relative;
+  flex: 1;
+  padding: 28px 26px 30px;
+}
+
+.ProductHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.PageEyebrow {
+  color: #6b7280;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.ProductHeader h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.PrimaryButton,
+.SecondaryButton,
+.FilterButton,
+.ActionButton {
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.PrimaryButton {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  padding: 12px 18px;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.25);
+}
+
+.ProductFilterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+
+.SearchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6b7280;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px 14px;
+  min-width: 220px;
+}
+
+.SearchIcon {
+  font-size: 1.2rem;
+}
+
+.FilterGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.FilterButton {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 10px 14px;
+}
+
+.ProductStatsRow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.MiniStat {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.MiniLabel {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+.MiniStat strong {
+  font-size: 1.8rem;
+  color: #111827;
+}
+
+.ProductTableCard {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 18px 18px 8px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  height: 70%;
+  overflow: auto;
+}
+
+.TableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.TableHeader h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.SecondaryButton {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 9px 14px;
+}
+
+.ProductTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ProductTable th,
+.ProductTable td {
+  text-align: left;
+  padding: 14px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.ProductTable th {
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+}
+
+.ProductCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.ProductThumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+
+
+.StatusBadge {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.StatusBadge.success {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.StatusBadge.warning {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.ActionButton {
+  background: #eef2ff;
+  color: #4338ca;
+  padding: 8px 12px;
+}
+
+@media (max-width: 900px) {
+  .ProductFilterBar,
+  .ProductHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .FilterGroup {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .ProductStatsRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .ProductPage {
+    flex-direction: column;
+  }
+
+  .ProductContent {
+    padding: 20px 16px 26px;
+  }
+
+  .ProductTable thead {
+    display: none;
+  }
+
+  .ProductTable,
+  .ProductTable tbody,
+  .ProductTable tr,
+  .ProductTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .ProductTable tr {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px 0;
+  }
+
+  .ProductTable td {
+    border: none;
+    padding: 8px 0;
+  }
+}
+/* =============================================================== */
+/* Add Product page styles */
+/* =============================================================== */
+.AddProductpage {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(900px, 90%);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e5e7eb;
+  border-radius: 28px;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.16);
+  padding: 26px 26px 20px;
+  z-index: 20;
+}
+
+.AddCategoryPage {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(900px, 90%);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e5e7eb;
+  border-radius: 28px;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.16);
+  padding: 26px 26px 20px;
+  z-index: 20;
+}
+
+.AddProductHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.AddProductEyebrow {
+  color: #6b7280;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.AddProductHeader h2 {
+  font-size: 2rem;
+  color: #111827;
+  font-weight: 700;
+}
+
+.CloseProductButton {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  color: #374151;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.AddProductLayout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.ProductMediaBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ProductColorPlaceholder {
+  width: 100%;
+  height: 260px;
+  border: 1px dashed #c7d2fe;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  color: #3328fc;
+  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+  padding: 20px;
+}
+
+.ActionCancel,
+.ActionSave {
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.UploadColor {
+  background: #cacaca4b;
+  color: #4338ca;
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+}
+
+.ProductFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.Field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #374151;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.Field span {
+  color: #374151;
+}
+
+.Field input,
+.Field select,
+.Field textarea {
+  width: 100%;
+  border: 1px solid #dfe5ee;
+  border-radius: 12px;
+  background: #f9fafb;
+  color: #111827;
+  padding: 12px 14px;
+  font-size: 0.96rem;
+  outline: none;
+}
+
+.Field input::placeholder,
+.Field textarea::placeholder {
+  color: #9ca3af;
+}
+
+.Field textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.FullWidth {
+  grid-column: 1 / -1;
+}
+
+.FormActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.ActionCancel {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 12px 18px;
+}
+
+.ActionSave {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  padding: 12px 18px;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.25);
+}
+
+@media (max-width: 760px) {
+  .AddProductpage,
+  .AddCategoryPage {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 14px;
+  }
+
+  .AddProductLayout,
+  .ProductFormGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .FormActions {
+    justify-content: stretch;
+  }
+
+  .ActionCancel,
+  .ActionSave {
+    flex: 1;
+  }
+}
+/* =============================================================== */
+/* End of stylesheet */
+/* =============================================================== */
