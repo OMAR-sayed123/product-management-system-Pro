@@ -13,7 +13,7 @@ const Login = () => {
                             <p className='titelP'>Product management system</p>
                     </div>
                     <div className='ContantIntro'>
-                    <img src="./ChatGPT Image Aug 17, 2026, 06_03_07 PM.png" alt="Loading..." className='introImage' />
+                    <img src={`${process.env.PUBLIC_URL}/ChatGPT Image Aug 17, 2026, 06_03_07 PM.png`} alt="Stock Flow introduction" className='introImage' />
                     </div>
                 </section>
                     <Outlet/>

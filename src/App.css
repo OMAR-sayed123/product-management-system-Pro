@@ -133,7 +133,6 @@ body.dark-mode .ProductsTable th {
   width: 40%;
   height: 90%;
   background-image: linear-gradient(to right, #0000ff4b, #0000ff1e);
-  
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -243,6 +242,105 @@ body.dark-mode .ProductsTable th {
 /* =============================================================== */
 /* Login page end */
 /* =============================================================== */
+
+@media (max-width: 760px) {
+  .ContenarAll {
+    min-height: 100vh;
+    padding: 14px;
+    align-items: flex-start;
+  }
+
+  .Contant {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 18px;
+    border-radius: 28px;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .SecIntro {
+    width: 100%;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .HeaderIntro,
+  .ContantIntro {
+    width: 100%;
+  }
+
+  .HeaderIntro {
+    padding: 4px 0;
+  }
+
+  .TitelHeader,
+  .titelP {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .ContantIntro {
+    height: clamp(150px, 30vh, 260px);
+  }
+
+  .Seclogin {
+    width: 100%;
+    flex: 0 0 auto;
+    min-height: 0;
+    padding: 12px 16px 20px;
+  }
+
+  .headerLogin {
+    min-height: 72px;
+  }
+
+  .informationLogin {
+    width: 100%;
+    min-height: 300px;
+    gap: 12px;
+  }
+
+  .Email,
+  .password,
+  .Name {
+    width: 100%;
+  }
+
+  .PrForgotpassword {
+    width: 100%;
+  }
+
+  .btnlogin {
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 420px) {
+  .ContenarAll {
+    padding: 8px;
+  }
+
+  .Contant {
+    padding: 12px;
+    border-radius: 22px;
+  }
+
+  .ContantIntro {
+    height: 135px;
+  }
+
+  .Seclogin {
+    padding-inline: 12px;
+  }
+
+  .inputemail,
+  .inputpassword,
+  .inputname {
+    padding: 13px 18px;
+  }
+}
 
 /* =============================================================== */
 /* Sidebar navigation styles */

@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       {/* BrowserRouter enables page navigation without reloading */}
-      <BrowserRouter>
+      <BrowserRouter basename="/product-management-system-Pro">
         <Routes>
           {/* Login page contains nested routes for sign in and sign up */}
           <Route path="/" element={<Login />}>
