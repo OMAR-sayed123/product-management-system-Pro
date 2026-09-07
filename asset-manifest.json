@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/product-management-system-Pro/static/css/main.ce3f0310.css",
-    "main.js": "/product-management-system-Pro/static/js/main.5e52a1db.js",
+    "main.js": "/product-management-system-Pro/static/js/main.d7de86bc.js",
     "static/js/453.9df8dfa1.chunk.js": "/product-management-system-Pro/static/js/453.9df8dfa1.chunk.js",
     "index.html": "/product-management-system-Pro/index.html",
     "main.ce3f0310.css.map": "/product-management-system-Pro/static/css/main.ce3f0310.css.map",
-    "main.5e52a1db.js.map": "/product-management-system-Pro/static/js/main.5e52a1db.js.map",
+    "main.d7de86bc.js.map": "/product-management-system-Pro/static/js/main.d7de86bc.js.map",
     "453.9df8dfa1.chunk.js.map": "/product-management-system-Pro/static/js/453.9df8dfa1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ce3f0310.css",
-    "static/js/main.5e52a1db.js"
+    "static/js/main.d7de86bc.js"
   ]
 }
